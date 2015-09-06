@@ -3,7 +3,7 @@
 // @author        Jeremie Jarosh
 // @namespace     https://github.com/triple-j
 // @description   Save Magnet links as text files.
-// @version       1.0
+// @version       1.1
 // @include       *
 // ==/UserScript==
 
@@ -31,7 +31,7 @@ for ( var i=0; i < links.length; i++ ) {
 		evt.preventDefault();
 		
 		var magnetText = this.getAttribute('href'),
-			filename = this.textContent + ".magnet";
+			filename = (this.textContent.trim() || "download") + ".magnet";
 		
 		saveData( magnetText, filename, "text/plain" );
 	});
