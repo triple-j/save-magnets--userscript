@@ -3,7 +3,7 @@
 // @author        Jeremie Jarosh
 // @namespace     https://github.com/triple-j
 // @description   Save Magnet links as text files.
-// @version       1.1
+// @version       1.2
 // @include       *
 // ==/UserScript==
 
@@ -13,10 +13,9 @@ var saveData = (function () {
 	document.body.appendChild(a);
 	a.style = "display: none";
 	return function (data, fileName, fileType) {
-		var json = JSON.stringify(data),
-			blob = new Blob([json], {type: "octet/stream"}),
-			url = window.URL.createObjectURL(blob),
-			fileType = fileType || "text/plain";
+		var fileType = fileType || "text/plain",
+			blob = new Blob([data], {type: fileType}),
+			url = window.URL.createObjectURL(blob);
 		a.href = url;
 		a.download = fileName;
 		a.click();
