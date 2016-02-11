@@ -14,7 +14,8 @@ for ( var i=0; i < links.length; i++ ) {
 		evt.preventDefault();
 		
 		var magnetText = this.getAttribute('href'),
-			fileNameToSaveAs = (this.textContent.trim() || "download") + ".magnet",
+			fileNameToSaveAs = (this.textContent.trim() || "download") + " - "
+				+ document.querySelector('title').textContent + ".magnet",
 			textFileAsBlob = new Blob([magnetText], {type: "text/plain"}),
 			downloadLink = document.createElement("a");
 		
