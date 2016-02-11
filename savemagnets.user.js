@@ -3,7 +3,7 @@
 // @author        Jeremie Jarosh
 // @namespace     https://github.com/triple-j
 // @description   Save Magnet links as text files.
-// @version       1.3
+// @version       1.4
 // @include       *
 // ==/UserScript==
 
